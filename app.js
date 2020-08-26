@@ -16,23 +16,23 @@ const postsRoute  = require('./routes/posts');
 // IMP ==== to convert the request body into json
 const bodyParser = require('body-parser');
 
+// IMP ==== is allow us to access from other domains
+const cors = require('cors');
+
+
+
+// middlewares
+// middleware function which passes req to the POSTS route
+app.use( cors() );
 // converting body to json which then only can identify by js.
 app.use(bodyParser.json());
 
-
-// routes
-
-// middleware function which passes req to the POSTS route
+// route 
 app.use('/posts', postsRoute);
-
 
 app.get('/', (req, res) => {
     res.send('Home Page');
 }); 
-
-
-
-
 
 
 

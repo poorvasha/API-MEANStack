@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// schema for collections
+// schema for particular collection
 const PostSchema = mongoose.Schema({
     title: {
         type: String,
@@ -16,5 +16,5 @@ const PostSchema = mongoose.Schema({
     }
 });
 
-
+// exports model
 module.exports = mongoose.model('Posts', PostSchema)
